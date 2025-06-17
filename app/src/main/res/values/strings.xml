@@ -1,4 +1,21 @@
 <resources>
-    <string name="app_name">Gardenly 3</string>
-    <string name="login">Login</string>
+    <string name="app_name">GARDENLY</string>
+    !climate
+    <string name="climate_question">Which climate best describes your location?</string>
+    <string name="climate_selection_1">Tropical</string>
+    <string name="climate_selection_2">Subtropical</string>
+    <string name ="climate_selection_3">Continental</string>
+    <string name ="climate_selection_4">Mediterranean</string>
+    <string name ="climate_selection_5">Temperate</string>
+    <string name ="climate_selection_6">Other</string>
+    !home
+    <string name="home_question">What type of home do you live in?</string>
+    <string name ="home_selection_1">Apartment</string>
+    <string name ="home_selection_2">Home</string>
+    !plant
+    <string name="plant_question">Which types of plants do you like to grow?</string>
+    <string name ="plant_selection_1">Fruit</string>
+    <string name ="plant_selection_2">Flower</string>
+    <string name ="plant_selection_3">Ornamental Plants</string>
+
 </resources>

@@ -1,0 +1,102 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main_lv">
+
+    <!-- Circle 1 (Top Left) -->
+    <View
+        android:id="@+id/circle1"
+        android:layout_width="126dp"
+        android:layout_height="126dp"
+        android:layout_marginStart="48dp"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toTopOf="@id/circle3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread" />
+
+    <!-- Circle 2 (Top Right) -->
+    <View
+        android:id="@+id/circle2"
+        android:layout_width="126dp"
+        android:layout_height="126dp"
+        android:layout_margin="80dp"
+        android:layout_marginTop="68dp"
+        android:translationX="3dp"
+        android:background="@drawable/circle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/circle1"
+        app:layout_constraintTop_toTopOf="@id/circle1" />
+
+    <!-- Circle 3 (Middle Left) -->
+    <View
+        android:id="@+id/circle3"
+        android:layout_width="126dp"
+        android:layout_height="126dp"
+        android:layout_marginStart="48dp"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toTopOf="@id/circle5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/circle1" />
+
+    <!-- Circle 4 (Middle Right) -->
+    <View
+        android:id="@+id/circle4"
+        android:layout_width="126dp"
+        android:layout_height="126dp"
+        android:layout_margin="80dp"
+        android:translationX="3dp"
+        android:background="@drawable/circle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/circle3"
+        app:layout_constraintTop_toTopOf="@id/circle3" />
+
+    <!-- Circle 5 (Bottom Left) -->
+    <View
+        android:id="@+id/circle5"
+        android:layout_width="126dp"
+        android:layout_height="126dp"
+        android:layout_marginStart="48dp"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toTopOf="@id/wheelbarrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/circle3" />
+
+    <!-- Circle 6 (Bottom Right) -->
+    <View
+        android:id="@+id/circle6"
+        android:layout_width="126dp"
+        android:layout_height="126dp"
+        android:layout_margin="80dp"
+        android:layout_marginTop="156dp"
+        android:translationX="3dp"
+        android:background="@drawable/circle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/circle5"
+        app:layout_constraintTop_toTopOf="@id/circle5" />
+
+    <!-- Wheelbarrow -->
+    <ImageView
+        android:id="@+id/wheelbarrow"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/wheelbarrow"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@android:color/white"
+        app:itemIconSize="60dp"
+        app:itemIconTint="@color/black"
+        app:labelVisibilityMode="unlabeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/nav_menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

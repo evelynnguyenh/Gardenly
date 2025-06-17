@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/yellow"
+    android:padding="25dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <!-- Climate -->
+        <LinearLayout
+            android:id="@+id/stepClimate"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/app_name"
+                android:textColor="#5D3A00"
+                android:textSize="80sp"
+                android:fontFamily="@font/jomhuria" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/climate_question"
+                android:fontFamily="@font/dongler"
+                android:textStyle="bold"
+                android:textSize="25dp" />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:gravity="center"
+                android:useDefaultMargins="true">
+
+                <Button
+                    android:id="@+id/btnTropical"
+                    style="@style/ClimateButton"
+                    android:text="@string/climate_selection_1" />
+
+                <Button
+                    android:id="@+id/btnSubtropical"
+                    style="@style/ClimateButton"
+                    android:text="@string/climate_selection_2" />
+
+                <Button
+                    android:id="@+id/btnContinental"
+                    style="@style/ClimateButton"
+                    android:text="@string/climate_selection_3" />
+
+                <Button
+                    android:id="@+id/btnMediterranean"
+                    style="@style/ClimateButton"
+                    android:text="@string/climate_selection_4" />
+
+                <Button
+                    android:id="@+id/btnTemperate"
+                    style="@style/ClimateButton"
+                    android:text="@string/climate_selection_5" />
+
+                <Button
+                    android:id="@+id/btnOther"
+                    style="@style/ClimateButton"
+                    android:layout_height="match_parent"
+                    android:text="@string/climate_selection_6" />
+            </GridLayout>
+        </LinearLayout>
+
+        <!-- House type -->
+        <LinearLayout
+            android:id="@+id/stepHouseType"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_question" />
+
+            <GridLayout
+                android:columnCount="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btnApartment"
+                    android:text="@string/home_selection_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/btnDetachedHouse"
+                    android:text="@string/home_selection_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </GridLayout>
+        </LinearLayout>
+
+        <!-- Plant type -->
+        <LinearLayout
+            android:id="@+id/stepInterest"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/plant_question" />
+
+            <GridLayout
+                android:columnCount="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btnFruit"
+                    android:text="@string/plant_selection_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/btnFlower"
+                    android:text="@string/plant_selection_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/btnOrnamentalPlants"
+                    android:text="@string/plant_selection_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </GridLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
