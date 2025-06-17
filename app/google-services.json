@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "169461986275",
+    "project_id": "gardenly-4e6bd",
+    "storage_bucket": "gardenly-4e6bd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:169461986275:android:621467c87f7f389b8b66d6",
+        "android_client_info": {
+          "package_name": "com.evelyn.gardenly"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQicNUnk9DNIc9w2u3MXx4bkt11XcuLXY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
