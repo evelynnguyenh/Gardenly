@@ -35,7 +35,7 @@
                 android:text="@string/climate_question"
                 android:fontFamily="@font/dongler"
                 android:textStyle="bold"
-                android:textSize="25dp" />
+                android:textSize="26dp" />
 
             <GridLayout
                 android:layout_width="match_parent"
