@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GARDENLY</string>
+    <string name="app_name">Gardenly</string>
     !climate
     <string name="climate_question">Which climate best describes your location?</string>
     <string name="climate_selection_1">Tropical</string>

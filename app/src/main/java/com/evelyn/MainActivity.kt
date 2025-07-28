@@ -9,9 +9,9 @@ import com.evelyn.gardenly.R
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.title_page)
 
-        findViewById<Button>(R.id.btnStartSurvey).setOnClickListener {
+        findViewById<Button>(R.id.startButton).setOnClickListener {
             val intent = Intent(this, LivingConditionsActivity::class.java)
             startActivity(intent)
         }
