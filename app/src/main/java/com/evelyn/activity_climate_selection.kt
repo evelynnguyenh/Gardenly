@@ -9,7 +9,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 
-class LivingConditionsActivity : AppCompatActivity() {
+class activity_climate_selection : AppCompatActivity() {
 
     // Step containers
     private lateinit var stepClimate: LinearLayout

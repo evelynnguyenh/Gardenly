@@ -1,10 +1,9 @@
-package com.evelyn
+package com.evelyn.gardenly
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.evelyn.gardenly.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.title_page)
 
         findViewById<Button>(R.id.startButton).setOnClickListener {
-            val intent = Intent(this, LivingConditionsActivity::class.java)
+            val intent = Intent(this, Login::class.java)
             startActivity(intent)
         }
     }
