@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.evelyn.gardenly"
+    namespace = "com.evelyn"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.evelyn.gardenly"
+        applicationId = "com.evelyn"
         minSdk = 24
         targetSdk = 35
         versionCode = 1

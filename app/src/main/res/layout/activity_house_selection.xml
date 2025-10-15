@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/yellow"
+    android:gravity="center">
+
+    <include
+        layout="@layout/header_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <!-- House type -->
+    <LinearLayout
+        android:id="@+id/stepHouseType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/dongler"
+            android:text="@string/home_question"
+            android:textSize="26sp"
+            android:textStyle="bold"/>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:gravity="center"
+            android:padding="25dp"
+            android:useDefaultMargins="true">
+
+            <Button
+                android:id="@+id/btnApartment"
+                style="@style/ClimateButton"
+                android:text="@string/home_selection_1" />
+
+            <Button
+                android:id="@+id/btnDetachedHouse"
+                style="@style/ClimateButton"
+                android:text="@string/home_selection_2" />
+        </GridLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>

@@ -7,28 +7,35 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/wheelbarrow"
-        android:label="@string/app_name"
         android:roundIcon="@drawable/wheelbarrow"
+        android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.Gardenly"
         tools:targetApi="31">
 
+
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".Login" android:exported="true" />
 
         <activity
-            android:name="com.evelyn.activity_climate_selection"
-            android:exported="true" />
+            android:name=".Login"
+            android:exported="false" />
+
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".activity_climate_selection"
+            android:exported="false" />
 
     </application>
-
 </manifest>

@@ -1,17 +1,20 @@
 package com.evelyn
+
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.evelyn.Login
+import android.widget.Button
 
-class MainActivity : AppCompatActivity() {
+
+class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.title_page)
-        findViewById<Button>(R.id.startButton).setOnClickListener {
-            val intent = Intent(this, Login::class.java)
-            startActivity(intent)
+
+        val startButton = findViewById<Button>(R.id.startButton)
+        startButton.setOnClickListener {
+            startActivity(Intent(this, Login::class.java))
+            finish()
         }
     }
 }
