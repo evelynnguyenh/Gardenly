@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace = "com.evelyn.gardenly"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.evelyn.gardenly"
         minSdk = 24
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -39,7 +39,7 @@ android {
 
 dependencies {
     // Firebase (bom quản lý version)
-    implementation(platform("com.google.firebase:firebase-bom:33.15.0"))
+    implementation(platform("com.google.firebase:firebase-bom:34.4.0"))
     implementation(libs.firebase.auth)
     implementation(libs.firebase.firestore)
 
