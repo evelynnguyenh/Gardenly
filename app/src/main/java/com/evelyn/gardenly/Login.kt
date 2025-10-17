@@ -1,4 +1,4 @@
-package com.evelyn
+package com.evelyn.gardenly
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+
 
 
 class Login : AppCompatActivity() {
@@ -24,7 +25,7 @@ class Login : AppCompatActivity() {
             if (phone.isEmpty()) {
                 Toast.makeText(this, "Please enter your phone number", Toast.LENGTH_SHORT).show()
             } else {
-                val intent = Intent(this, com.evelyn.activity_climate_selection::class.java)
+                val intent = Intent(this, activity_climate_selection::class.java)
                 startActivity(intent)
             }
         }

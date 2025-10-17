@@ -1,10 +1,10 @@
-package com.evelyn
+package com.evelyn.gardenly
 
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.evelyn.gardenly.R
+import com.evelyn.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
