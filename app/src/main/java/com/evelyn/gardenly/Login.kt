@@ -25,7 +25,7 @@ class Login : AppCompatActivity() {
             if (phone.isEmpty()) {
                 Toast.makeText(this, "Please enter your phone number", Toast.LENGTH_SHORT).show()
             } else {
-                val intent = Intent(this, activity_climate_selection::class.java)
+                val intent = Intent(this, Activity_climate_selection::class.java)
                 startActivity(intent)
             }
         }
