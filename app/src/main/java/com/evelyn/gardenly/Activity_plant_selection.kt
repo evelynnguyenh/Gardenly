@@ -5,21 +5,16 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
 
 class Activity_plant_selection : AppCompatActivity() {
-
-    private var selectedClimate: String? = null
-    private var selectedHouseType: String? = null
-    private var selectedPlantType: String? = null
+    private val db = FirebaseFirestore.getInstance()
+    private val uid = FirebaseAuth.getInstance().currentUser?.uid ?: "guest"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_plant_selection)
-
-        selectedClimate = intent.getStringExtra("climate")
-        selectedHouseType = intent.getStringExtra("house_type")
 
         val plantButtons = listOf(
             R.id.btnFruit to "Fruit Trees",
@@ -29,39 +24,17 @@ class Activity_plant_selection : AppCompatActivity() {
 
         plantButtons.forEach { (id, value) ->
             findViewById<Button>(id).setOnClickListener {
-                selectedPlantType = value
-                saveToFirestore()
+                val data = mapOf("plant" to value)
+                db.collection("users").document(uid)
+                    .set(data, SetOptions.merge())
+                    .addOnSuccessListener {
+                        Toast.makeText(this, "Saved plant: $value", Toast.LENGTH_SHORT).show()
+                        // Optional: chuyển sang HomeActivity
+                    }
+                    .addOnFailureListener { e ->
+                        Toast.makeText(this, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+                    }
             }
         }
-    }
-
-    private fun saveToFirestore() {
-        val userId = FirebaseAuth.getInstance().currentUser?.uid
-
-        if (userId == null) {
-            Toast.makeText(this, "Please log in", Toast.LENGTH_SHORT).show()
-            return
-        }
-
-        val data = hashMapOf(
-            "climate" to selectedClimate,
-            "house_type" to selectedHouseType,
-            "plant_preference" to selectedPlantType,
-            "timestamp" to FieldValue.serverTimestamp()
-        )
-
-        FirebaseFirestore.getInstance()
-            .collection("users")
-            .document(userId)
-            .collection("conditions")
-            .document("living")
-            .set(data)
-            .addOnSuccessListener {
-                Toast.makeText(this, "Saved successfully!", Toast.LENGTH_SHORT).show()
-                finish()
-            }
-            .addOnFailureListener {
-                Toast.makeText(this, "Could not save data", Toast.LENGTH_SHORT).show()
-            }
     }
 }

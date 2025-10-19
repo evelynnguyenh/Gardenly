@@ -3,9 +3,15 @@ package com.evelyn.gardenly
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
 
-class Activity_climate_selection: AppCompatActivity() {
+class Activity_climate_selection : AppCompatActivity() {
+    private val db = FirebaseFirestore.getInstance()
+    private val uid = FirebaseAuth.getInstance().currentUser?.uid ?: "guest"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,10 +28,18 @@ class Activity_climate_selection: AppCompatActivity() {
 
         climateButtons.forEach { (id, value) ->
             findViewById<Button>(id).setOnClickListener {
-                // Khi chọn xong khí hậu → chuyển sang HouseSelectionActivity
-                val intent = Intent(this, Activity_house_selection::class.java)
-                intent.putExtra("climate", value)
-                startActivity(intent)
+                val data = mapOf("climate" to value)
+                db.collection("users").document(uid)
+                    .set(data, SetOptions.merge())
+                    .addOnSuccessListener {
+                        Toast.makeText(this, "Saved climate: $value", Toast.LENGTH_SHORT).show()
+                        val intent = Intent(this, Activity_house_selection::class.java)
+                        intent.putExtra("climate", value)
+                        startActivity(intent)
+                    }
+                    .addOnFailureListener { e ->
+                        Toast.makeText(this, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+                    }
             }
         }
     }
