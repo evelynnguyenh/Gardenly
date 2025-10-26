@@ -30,7 +30,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Enter your phone number to sign up for this app"
+            android:text="Enter your email address to sign up for this app"
             android:textSize="14sp"
             android:textColor="@color/black" />
 
@@ -40,6 +40,7 @@
             android:orientation="vertical"
             android:padding="30dp">
 
+            <!-- Email input -->
             <EditText
                 android:id="@+id/phoneEditText"
                 android:layout_width="match_parent"
@@ -49,7 +50,8 @@
                 android:inputType="phone"
                 android:padding="12dp" />
 
-            <EditText
+            <!-- ✅ Đổi thành Button -->
+            <Button
                 android:id="@+id/continueButton"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
@@ -59,7 +61,7 @@
                 android:gravity="center"
                 android:textSize="16sp"
                 android:textColor="@color/white"
-                android:textAllCaps="false"/>
+                android:textAllCaps="false" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -69,14 +71,12 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp">
 
-                <!-- Dòng bên trái -->
                 <View
                     android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_weight="1"
                     android:background="@android:color/darker_gray" />
 
-                <!-- Text "or" -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -85,7 +85,6 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp" />
 
-                <!-- Dòng bên phải -->
                 <View
                     android:layout_width="0dp"
                     android:layout_height="1dp"
@@ -93,18 +92,17 @@
                     android:background="@android:color/darker_gray" />
             </LinearLayout>
 
-
-            <EditText
+            <!-- ✅ Cũng đổi thành Button -->
+            <Button
                 android:id="@+id/continueGGButton"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:background="@drawable/gray_button"
-
                 android:text="Continue with Google"
                 android:gravity="center"
                 android:textSize="16sp"
                 android:textColor="@color/black"
-                android:textAllCaps="false"/>
+                android:textAllCaps="false" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -116,12 +114,6 @@
                 android:textAlignment="center"
                 android:gravity="center"
                 android:paddingHorizontal="16dp" />
-
-
-
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
-
-
-

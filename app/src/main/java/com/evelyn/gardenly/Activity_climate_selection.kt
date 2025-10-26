@@ -33,9 +33,12 @@ class Activity_climate_selection : AppCompatActivity() {
                     .set(data, SetOptions.merge())
                     .addOnSuccessListener {
                         Toast.makeText(this, "Saved climate: $value", Toast.LENGTH_SHORT).show()
+
+
                         val intent = Intent(this, Activity_house_selection::class.java)
                         intent.putExtra("climate", value)
                         startActivity(intent)
+                        finish()
                     }
                     .addOnFailureListener { e ->
                         Toast.makeText(this, "Error: ${e.message}", Toast.LENGTH_SHORT).show()

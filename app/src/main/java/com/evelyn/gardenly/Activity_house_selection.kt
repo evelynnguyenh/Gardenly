@@ -10,6 +10,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 
 class Activity_house_selection : AppCompatActivity() {
+
     private val db = FirebaseFirestore.getInstance()
     private val uid = FirebaseAuth.getInstance().currentUser?.uid ?: "guest"
 
@@ -18,23 +19,32 @@ class Activity_house_selection : AppCompatActivity() {
         setContentView(R.layout.activity_house_selection)
 
         val houseButtons = listOf(
-            R.id.btnDetachedHouse to "House",
+            R.id.btnDetachedHouse to "Detached House",
             R.id.btnApartment to "Apartment"
         )
 
         houseButtons.forEach { (id, value) ->
             findViewById<Button>(id).setOnClickListener {
                 val data = mapOf("houseType" to value)
+
                 db.collection("users").document(uid)
                     .set(data, SetOptions.merge())
                     .addOnSuccessListener {
-                        Toast.makeText(this, "Saved house: $value", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Saved house type: $value", Toast.LENGTH_SHORT).show()
+
+                        // ✅ Điều hướng sang Activity_plant_selection
                         val intent = Intent(this, Activity_plant_selection::class.java)
                         intent.putExtra("houseType", value)
                         startActivity(intent)
+
+                        // Kết thúc Activity này để không quay lại khi nhấn Back
+                        finish()
+
+                        // (Tùy chọn) Thêm hiệu ứng chuyển màn hình mượt hơn
+                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
                     }
                     .addOnFailureListener { e ->
-                        Toast.makeText(this, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Error saving: ${e.message}", Toast.LENGTH_SHORT).show()
                     }
             }
         }

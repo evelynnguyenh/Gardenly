@@ -29,14 +29,18 @@
             android:name=".Login"
             android:exported="false" />
 
-        <!-- MainActivity -->
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
 
         <!-- Climate selection activity -->
         <activity
-            android:name=".activity_climate_selection"
+            android:name=".Activity_climate_selection"
+            android:exported="false" />
+
+        <activity
+            android:name=".Activity_house_selection"
+            android:exported="false" />
+
+        <activity
+            android:name=".Activity_plant_selection"
             android:exported="false" />
 
     </application>

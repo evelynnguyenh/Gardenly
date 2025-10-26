@@ -1,5 +1,6 @@
 package com.evelyn.gardenly
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
@@ -9,6 +10,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 
 class Activity_plant_selection : AppCompatActivity() {
+
     private val db = FirebaseFirestore.getInstance()
     private val uid = FirebaseAuth.getInstance().currentUser?.uid ?: "guest"
 
@@ -25,11 +27,16 @@ class Activity_plant_selection : AppCompatActivity() {
         plantButtons.forEach { (id, value) ->
             findViewById<Button>(id).setOnClickListener {
                 val data = mapOf("plant" to value)
+
                 db.collection("users").document(uid)
                     .set(data, SetOptions.merge())
                     .addOnSuccessListener {
                         Toast.makeText(this, "Saved plant: $value", Toast.LENGTH_SHORT).show()
-                        // Optional: chuyển sang HomeActivity
+
+                        // ✅ Điều hướng sang màn MainLevelActivity
+                        val intent = Intent(this, MainLevelActivity::class.java)
+                        startActivity(intent)
+                        finish()
                     }
                     .addOnFailureListener { e ->
                         Toast.makeText(this, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
