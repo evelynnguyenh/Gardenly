@@ -43,6 +43,7 @@ dependencies {
     implementation(libs.firebase.auth)
     implementation(libs.firebase.firestore)
 
+
     // AndroidX + Material
     implementation(libs.appcompat)
     implementation(libs.material)
